@@ -20,14 +20,12 @@ const Contact = () => {
     e.preventDefault();
     setLoading(true);
 
-    // import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
-    // import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
-    // import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY,
+
 
     emailjs
       .send(
-        'service_h22attw',
-        'template_u8evl5m',
+        import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
         {
           from_name: form.name,
           to_name: 'Abdulganiyy',
@@ -35,7 +33,8 @@ const Contact = () => {
           to_email: 'devabdulganiyy@gmail.com',
           message: form.message,
         },
-        'LLfYfdyxsDZXKkjI0',
+        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY,
+
       )
       .then(
         () => {
